@@ -35,6 +35,8 @@ public class MainController {
     private TextField answerTextField;
     @FXML
     private Label messageLabel;
+    @FXML
+    private ImageView QRImage;
 
     public int tries = 0;
     public boolean btn1IsPressed;
@@ -43,6 +45,7 @@ public class MainController {
     public String btn2Text;
     public int correctAnswer;
     public int buttonNum = 1;
+
 
     public void submit(){
         if (Integer.parseInt(answerTextField.getText()) == correctAnswer){
@@ -82,6 +85,7 @@ public class MainController {
             messageLabel.setOpacity(0);
             answerTextField.setOpacity(0);
             submitBtn.setOpacity(0);
+            QRImage.setOpacity(1);
         }
     }
 
@@ -105,6 +109,7 @@ public class MainController {
     }
 
     public void btn1(ActionEvent e){
+        QRImage.setOpacity(0);
         label.setText("36+12=");
         answerTextField.setOpacity(1);
         submitBtn.setOpacity(1);
